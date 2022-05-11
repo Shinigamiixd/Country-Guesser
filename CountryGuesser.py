@@ -336,20 +336,3 @@ for i in range(1):
         else:
             print(f"You lose! The real country was {final_country}")
             sleep(30)
-
-
-
-# USEFUL LINKS:
-# https://janakiev.com/blog/gps-points-distance-python/
-# https://www.thepythoncode.com/article/get-geolocation-in-python
-
-# TODO:
-# 1 auto imports
-# 2 draw the country in ASCII
-# 3 add hints
-
-# DONE:
-# 1 autocorrect the guess
-
-# imports:
-# countryinfo
