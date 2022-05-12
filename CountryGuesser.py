@@ -278,7 +278,7 @@ for i in range(1):
         sleep(30)
         exit()
     else:
-        print(f"This country - {languages_two}")
+        print(f"The real country's official languages are - {languages_two}")
 
     # GUESS 2
     for i in range(1):
