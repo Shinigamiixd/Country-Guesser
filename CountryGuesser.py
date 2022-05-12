@@ -1,25 +1,18 @@
 import subprocess
 from time import sleep
+from random import choice
 
-# THIS IS A FIRST TIME DEPENDANCIES INSTALLATION
-
-autocorrect_check = subprocess.run(["pip", "show", "--quiet", "autocorrect"])
-geopy_check = subprocess.run(["pip", "show", "--quiet", "geopy"])
-countryinfo_check = subprocess.run(["pip", "show", "--quiet", "countryinfo"])
-
-if autocorrect_check.returncode or geopy_check.returncode or countryinfo_check.returncode != 0:
-    subprocess.call("cls", shell=True)
+try:
+    import geopy.distance
+    from geopy import Nominatim
+    import autocorrect as ac
+    from countryinfo import CountryInfo
+except ImportError:
     print("Certain dependancies not found, installing in 3 seconds")
     sleep(3)
-    subprocess.call("cls", shell=True)
-    print("Installing autocorrect")
     subprocess.run(["pip", "install", "autocorrect"])
-    print("Installing geopy")
     subprocess.run(["pip", "install", "geopy"])
-    subprocess.call("cls", shell=True)
-    print("Installing countryinfo")
     subprocess.run(["pip", "install", "countryinfo"])
-    subprocess.call("cls", shell=True)
     print("Please restart the script! Closing in 30 seconds...")
     sleep(30)
     exit()
@@ -185,13 +178,6 @@ countries = {
 "Yemen": "YE", 
 "Zambia": "ZM", 
 "Zimbabwe": "ZW"}
-
-from random import choice
-import geopy.distance
-from geopy import Nominatim
-from time import sleep
-import autocorrect as ac
-from countryinfo import CountryInfo
 
 def get_real_country_and_code():
     """Get the final country"""
